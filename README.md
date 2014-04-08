@@ -68,6 +68,8 @@ Google Translate API
 The Google Translate API allows the user to input french words or phrases and it will ask the user "Did you mean.." followed by their French input translated to English.
 The chatBot will also output a generic response after, as it only has a loose grasp on French and would like to avoid that fact.
 
+Example:
+
 How are you
 
 *j'aime les bonbons*
