@@ -13,9 +13,13 @@ The chatBot can also give you Yahoo! Answers if you ask it to answer something f
 
 
 How to Compile and Run the Code
-=========
+---------------------
 All files in repository must be downloaded (including all jar files) and then run from main.java.chat.Main.java.
 The console window that opens up can then be used to interact with the chatBot.
+
+To run the translator, you must go into the MyResponder class and uncomment “translate(); “ 
+in both the pickResponse method and the respond method. 
+(It is commented out because it will still glitch when trying to generate a generic response sometimes).
 
 New Implemented Features
 =======================
@@ -79,6 +83,14 @@ Did you mean I love sweets?
 Can we talk about something else?
 
 
+Wikipedia API (Not fully functional)
+-------------
+The wikipedia API was to be used so that the user could ask the chatBot for information on something.
+The chatBot would then ask the user what they would like to know about.
+The user could then enter a basic query that the chatBot will look up on Wikipedia.
+The writeup from the Wikipedia page will then be outputted to the user. 
+
+
 Class Organization
 =========
 
@@ -120,6 +132,9 @@ ActuallyYahoo.java
 * Yahoo! Answers API
 * Method that uses the user query to find a similar question on Yahoo! Answers and output the chosen answer from that question
 
+ActuallyWiki.java
+* Wikipedia API
+* Method that gets and returns the writeup from a wikipedia page (inquired by the user) to the user. 
 
 main.java.chat.components
 -------------------------
@@ -201,6 +216,10 @@ ie. I like (noun).
 
 Limitations
 -----------
+
+-Sometimes, if speaking French, you must input twice before the chatBot "understands."
+
+-Chatbot sometimes cannot handle specific punctuation.
 
 -ChatBot does not know about a lot of specific topics and will therefore resort back to the randomized responses a lot. 
 
