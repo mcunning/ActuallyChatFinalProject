@@ -1,4 +1,4 @@
-ACTUALLYCHAT --- Final Project
+ACTUALLYCHAT - Final Project
 ============
 
 
@@ -7,6 +7,9 @@ Overview
 ACTUALLY CHAT is a clone of the Assignment 3 chat bot that can carry a conversation with a real person while simulating a first date conversation. 
 The ChatBot is a bit self-absorbed. If you try to tell the ChatBot about yourself, it will generally lead the conversation back to itself. 
 If you are able to get the ChatBot to ask you about yourself, it will ask you your zodiac sign and will tell you some traits based on your specific sign. 
+If you speak French to the chatBot, it will translate it to English and ask if that's what you meant, but then it will change the subject back to itself again.
+The chatBot has the ability to look up people's information on Facebook and give it back to you depending on what information you ask it for.
+The chatBot can also give you Yahoo! Answers if you ask it to answer something for you. 
 
 
 How to Compile and Run the Code
@@ -59,6 +62,21 @@ What would you like to know about?
 I just did this five minutes ago.  Take a patrially defrosted boneless skinless chicken breast and slice it in 1/4 inch pieces... (*and so on*)
 
 
+Google Translate API
+--------------------
+
+The Google Translate API allows the user to input french words or phrases and it will ask the user "Did you mean.." followed by their French input translated to English.
+The chatBot will also output a generic response after, as it only has a loose grasp on French and would like to avoid that fact.
+
+How are you
+
+*j'aime les bonbons*
+
+Did you mean I love sweets?
+
+Can we talk about something else?
+
+
 Class Organization
 =========
 
@@ -73,6 +91,7 @@ ActuallyResponder.java
 * Differentiates between keywords being a question/statement as well as if the entire input consists of/ends with/starts with the keyword/key phrase.
 * If user inputs the keyword "facebook" a scanner will be used to get user input and will use the Facebook API to output information to the user.
 * If user inputs the keyword "answer" a scanner will be used to scan the user query and use the Yahoo! Answers API to output information to the user based on their query.
+* If user inputs something in French, the chatBot will translate it to English and also output a generic response.
 * Generates a random response if user input is outside of topic.
 
 Chat.java
@@ -138,15 +157,16 @@ Features from A3
 Extra Topic Implemented
 
 -Improves the conversation for when the user gets tired of asking the chatBot about itself.
-
 -If the user hints at the chatBot asking them a question, chatBot will ask the user their zodiac sign
 and give the user personality characteristics depending on their specified sign. 
-
 -Example: (Words in italics are the chatBot)
 
 Shouldn't you ask me something about myself..?
+
 *What's your sign?*
+
 I'm a leo
+
 *Oh, a Leo! That means that you are loyal and generous!*
 
 
@@ -154,24 +174,25 @@ I'm a leo
 
 -If the user inputs anything that is outside of the chatBot's topic or does not trip any keywords
 the chatBot will output one of five different responses at random. 
-
 -The different responses were chosen to emphasize the chatBot's self centered persona and will lead the user back to asking the chatBot questions.
-
 -Example:
 
 What kind of food do you like?
+
 *I like Italian food, what do you like?* 
+
 I like steak.
+
 *Let's talk about me some more.*
+
 But you asked what I like...
+
 *That doesn't interest me.*
 
 POS Tagging (not fully functional)
 
 -Uses OpenNLP jar files
-
 -Reads the user input, splits the sentence and analyzes each individual word, and categorizes them as their specific sentence parts (verb, noun, etc.)
-
 -(Should) Check if user input was outside of topic, have a predetermined output that will put the users noun and/or verb into the sentence
 ie. I like (noun).
 *I love (noun)!*
