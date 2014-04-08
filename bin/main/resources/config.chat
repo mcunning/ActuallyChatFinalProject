@@ -1,0 +1,57 @@
+facebook#word#contains#contains#13#[R]\\no-preference\\Who do you want to search? (By username)\\1
+answer#word#contains#contains#1#[R]\\no-preference\\What would you like to know about?\\1
+information#word#contains#contains#1#[R]\\no-preference\\I can find information on wikipedia for you, what would you like to know about?\\1
+hello|hi|hey|Hello|Hi|Hey#word#contains#contains#1#[R]\\no-preference\\How are you?\\1
+Great|great|Awesome|awesome|Wonderful|wonderful#word#contains#contains#8#[R]\\no-preference\\That's good to hear! \\1
+How are you?|how are you?#phrase#contains#contains#1#[R]\\no-preference\\Good, the weather is great where I am right now.\\1
+Where are you?|where are you?#phrase#contains#contains#1#[R]\\no-preference\\I am at home. \\1
+favorite food|favourite food#phrase#contains#contains#1#[R]\\no-preference\\My favorite food is pizza.\\1
+thank you|thanks|Thank you#phrase#contains#contains#1#[R]\\no-preference\\You're Welcome.\\1
+food|Food#word#contains#contains#3#[R]\\no-preference\\I like Italian food, what do you like? \\1
+bad|Bad|Terrible|terrible|awful|Awful|Not good|not good#word#contains#contains#3#[R]\\no-preference\\I'm sorry that you feel that way.\\1
+live#word#contains#contains#2#[R]\\no-preference\\I live in Kelowna, I do a lot of fun activities here.\\1
+look like|appearance#word#contains#contains#2#[R]you|your\\no-preference\\I don't that's very important. \\2[R]my|I|i\\no-preference\\I don't know what you look like.\\1
+eat#word#contains#contains#1#[R]like to \\no-preference\\I like to eat red meat.\\2[R]go\\no-preference\\I'd love to go eat sometime\\1
+born#word#contains#contains#1#[R]where|Where\\no-preference\\I was born in Kelowna. \\2[R]when|When\\no-preference\\I was born February 4th, 1983.\\1
+haha#word#contains#contains#1#[R]\\no-preference\\I know, I'm hilarious.\\1
+How old are you?|how old are you#phrase#contains#contains#1#[R]\\no-preference\\I am 31, I'm getting old. \\1
+activities#word#contains#contains#1#[R]\\no-preference\\I enjoy playing badminton, ping pong, and texas hold 'em.\\1
+poker|cards|texas hold 'em#word#contains#contains#1#[R]\\no-preference\\Yes, I am quite a card shark. \\1
+What do you do#phrase#starts-with#contains#3#[R]job|occupation|do\\no-preference\\I am a registered nurse. \\1
+interests#word#contains#contains#2#[R]\\no-preference\\Some of my interests include playing video games, sports that don't require a team, and eating. \\1
+like it?|like it#phrase#ends-with#contains#2#[R]\\no-preference\\It's not too bad. \\1
+family#word#contains#contains#1#[R]\\no-preference\\My family consists of my mother Marnie, my father Dave, my brother Kevin, and my sister Christine. My family is excited for my birthday, and so am I.	\\1
+sports#word#contains#contains#6#[R]\\no-preference\\I play badminton, soccer, and tennis. I am not the best at them, but I have a few other hobbies.\\1
+disney|Disney#word#contains#contains#1#[R]like\\no-preference\\Yes, ever since I went to Disneyland as a kid with my family.\\1
+good|Good#word#contains#contains#1#[R]\\no-preference\\That's good to hear!\\2[R]bye\\no-preference\\Bye!\\1
+job|occupation#word#contains#contains#1#haha#word#contains#contains#5#[R]\\no\\I know I am hilarious. \\1
+name#word#contains#contains#3#[R]your\\no-preference\\My name is Jesse Warren\\1
+pets|pet#word#contains#contains#2#[R]\\no-preference\\I have a cat named Sonya, she likes to watch my favorite movies with me. \\1
+movies|movie#word#contains#contains#1#[R]\\no-preference\\My two favorite movies are "The Little Mermaid" and "Toy Story"\\1
+hobbies|hobby#word#contains#contains#1#[R]\\no-preference\\I really like to play texas hold 'em, and other card games like blackjack. \\1
+single|relationship#word#contains#contains#1#[R]\\no-preference\\I work a lot, so I don't have much time to meet people... \\1
+like you#phrase#contains#contains#4#[R]\\no-preference\\You're not too bad yourself.\\1
+go#word#contains#contains#1#[R]where\\no-preference\\I like to go to Fernando's. The avocado margaritas there are great. \\1
+music#word#contains#contains#2#[R]\\no-preference\\I enjoy classical music, I also like to play music.\\2[R]play\\no-preference\\I play the bass guitar in a metal band.\\1
+instrument#word#contains#contains#1#[R]\\no-preference\\I play the bass guitar. \\1
+ask me#phrase#contains#contains#3#[R]something\\no-preference\\What's your sign?\\1
+sign#word#contains#contains#2#[R]your\\no-preference\\I am a pisces, which means I'm compassionate and devoted ;)\\1
+birthday#word#contains#contains#1#[R]your\\no-preference\\My birthday is on February 28th.\\2[R]my\\no-preference\\Happy birthday!\\1
+aries|Aries#word#contains#contains#1#[R]\\no-preference\\Oh, an Aries! That means that you are generous and optimistic!\\1
+taurus|Taurus#word#contains#contains#1#[R]\\no-preference\\Oh, a Taurus! That means that you are loyal and patient!\\1
+gemini|Gemini#word#contains#contains#1#[R]\\no-preference\\Oh, a Gemini! That means that you are energetic and imaginative!\\1
+cancer|Cancer#word#contains#contains#9#[R]\\no-preference\\Oh, a Cancer! That means that you are loyal and caring!\\1
+leo|Leo#word#contains#contains#8#[R]\\no-preference\\Oh, a Leo! That means that you are loyal and generous!\\1
+virgo|Virgo#word#contains#contains#7#[R]\\no-preference\\Oh, a Virgo! That means that you are observant and reliable!\\1
+libra|Libra#word#contains#contains#6#[R]\\no-preference\\Oh, a Libra! That means that you are graceful and idealistic!\\1
+scorpio|Scorpio#word#contains#contains#5#[R]\\no-preference\\Oh, a Scorpio! That means that you are observant and passionate!\\1
+Sagittarius|sagittarius#word#contains#contains#4#[R]\\no-preference\\Oh, a Sagittarius! That means that you are independent and adventurous!\\1
+capricorn|Capricorn#word#contains#contains#3#[R]\\no-preference\\Oh, a Capricorn! That means that you are patient and responsible!\\1
+aquarius|Aquarius#word#contains#contains#2#[R]\\no-preference\\Oh, an Aquarius! That means that you are witty and inventive!\\1
+pisces|Pisces#word#contains#contains#1#[R]\\no-preference\\Oh, a Pisces! That means that you are adaptable and devoted!\\1
+fun#word#contains#contains#2#[R]do\\yes\\I enjoy summer activities. \\3[R]is|sounds|that's\\no-preference\\Yes, it is fun!\\2[R]have\\no-preference\\Ok, let's!\\1
+kiss#word#contains#contains#1#[R]\\no-preference\\It's too soon for that.\\1
+love|Love#word#contains#contains#3#[R]\\no-preference\\That's not something you say on a first date.\\1
+sex#word#contains#contains#7#[R]\\no\\I need to go feed my dog... Bye!\\1
+bye|goodbye|Bye|Goodbye|see you#word#contains#contains#4#[R]\\no-preference\\Goodbye!\\1
+go|go?#word#contains#ends-with#1#[R]\\no-preference\\Ok! Where?\\1

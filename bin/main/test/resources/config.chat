@@ -1,0 +1,4 @@
+Starts With Phrase#phrase#starts-with#contains#4#[R]\\no-preference\\Respond\\1
+Ends With Phrase#phrase#ends-with#contains#3#[R]\\no-preference\\Respond\\1
+Contains Phrase#phrase#contains#contains#2#[R]\\no-preference\\Respond\\1
+Exact Phrase#phrase#exact#contains#1#[R]\\no-preference\\Respond\\1
