@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 /**
  * 
+ * This class is cloned from A2 and scans in the user input and initializes the Responder
  * @author Madison Cunning
  *
  *
@@ -28,6 +29,9 @@ public class ActuallyChat implements Chat
 
 
     @Override
+    /**
+     * Initializes responder and sends to location of configuration file
+     */
     public void initialize( Responder responderIn )
     {
         responder = responderIn;
@@ -37,17 +41,32 @@ public class ActuallyChat implements Chat
     }//initialize
 
     @Override
+    /**
+     * 
+     * Scans and returns user input
+     * 
+     */
     public String getSentence()
     {
         return scan.nextLine();
     }
 
+    
+    /**
+     * 
+     * @param string prints the string
+     */
     private void print( String string )
     {
     	System.out.println( string );
     }
     
     @Override 
+    /**
+     * 
+     * begins chats
+     * 
+     */
     public void chat() throws IOException
     {
     	print( "Hello!" );

@@ -4,7 +4,8 @@ import java.io.IOException;
 
 /**
  * 
- * Cloned from A2
+ * This interface is cloned from A2 and reads the configuration file and sends a response
+ * @author Madison Cunning
  *
  */
 public interface Responder

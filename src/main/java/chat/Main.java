@@ -3,7 +3,11 @@ package main.java.chat;
 import java.io.IOException;
 
 /**
- * Cloned from A2
+ * 
+ * This class is cloned from A2 and initializes the chat
+ * @author Madison Cunning
+ * @version 1.0
+ *
  */
 public class Main
 {

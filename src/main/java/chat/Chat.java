@@ -4,7 +4,8 @@ import java.io.IOException;
 
 /**
  * 
- * Cloned from A2
+ * This interface is cloned from A2
+ * @author Madison Cunning
  *
  */
 public interface Chat
@@ -17,8 +18,4 @@ public interface Chat
      */
     String getSentence();
     void chat() throws IOException;
-//	String getBotName();
-//	String getResponse(String text);
-//	String getBotVersion();
-
 }

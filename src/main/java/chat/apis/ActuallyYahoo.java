@@ -45,8 +45,8 @@ public class ActuallyYahoo
 			try
 			{
 				is = myUrl.openStream(); 
-				JSONTokener tok = new JSONTokener(is);
-				result = new JSONObject(tok);
+				JSONTokener token = new JSONTokener(is);
+				result = new JSONObject(token);
 				is.close();
 			}
 			catch (Exception e)

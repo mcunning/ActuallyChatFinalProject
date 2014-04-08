@@ -12,16 +12,16 @@ public class YahooTest
 	public static void main(String[] args) throws IOException
 	{
 		String baseUrl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20answers.search%20where%20query%3D%22";
-		String baseUrl2 = "%22%20and%20type%3D%22resolved%22&format=json&diagnostics=true&callback=";
-		String userTimeline = "shave legs";
+		String urlEnd = "%22%20and%20type%3D%22resolved%22&format=json&diagnostics=true&callback=";
+		String userSearch = "brew wine"; //hardcoded for testing
 		
-		userTimeline = URLEncoder.encode(userTimeline, "UTF-8");
-		String fullUrl = baseUrl + userTimeline + baseUrl2;
+		userSearch = URLEncoder.encode(userSearch, "UTF-8");
+		String fullUrl = baseUrl + userSearch + urlEnd;
 		URL myUrl = new URL(fullUrl);
 		
 		InputStream is = myUrl.openStream();
-		JSONTokener tok = new JSONTokener(is);
-		JSONObject result = new JSONObject(tok);
+		JSONTokener token = new JSONTokener(is);
+		JSONObject result = new JSONObject(token);
 		
 		is.close();
 		

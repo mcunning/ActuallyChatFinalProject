@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.gtranslate.Language;
+import com.gtranslate.Translator;
+
 import main.java.chat.apis.ActuallyFacebook;
+import main.java.chat.apis.ActuallyWiki;
 import main.java.chat.apis.ActuallyYahoo;
 import main.java.chat.component.Keyword;
 import main.java.chat.component.Response;
@@ -15,18 +19,25 @@ import main.java.chat.util.ConfigReader;
 
 /**
  * 
+ * This class compares the user input against the configuration file and gets a response appropriately
  * @author Madison Cunning
  * @version 1.1
  *
  */
 public final class ActuallyResponder implements Responder {
 	private static List<Keyword> keywords;
-
+	boolean french = false;
+	
 	public ActuallyResponder() 
 	{
 	}
 
    @Override
+   /**
+    * 
+    * reads configuration file
+    * 
+    */
    public void readConfigFile(String relativePath)
     {
     	keywords = new ArrayList<Keyword>();
@@ -34,19 +45,21 @@ public final class ActuallyResponder implements Responder {
     }
 
    @Override
+   /**
+    * 
+    * Finds response to user input based on if keywords are in the configuration file
+    * @param inputSentence is the user input
+    */
 	public void respond(final String inputSentence) throws IOException
 	{
     	ActuallyFacebook facebook = new ActuallyFacebook();
     	ActuallyYahoo yahoo = new ActuallyYahoo();
-//		ActuallyWiki wiki = new ActuallyWiki();
+    	ActuallyWiki wiki = new ActuallyWiki();
     	String[] split = inputSentence.split( "\\s+" );
     	boolean respond = false;
 		
         search: for( Keyword keyword : keywords )
         {
-        	/*
-        	 * If phrase, do one thing, else, it's a word match so do something else. 
-        	 */
         	if( keyword.getType().equals( Keyword.KeywordType.PHRASE ) )
         	{
         		for( String k : keyword.getKeywords() )
@@ -61,7 +74,6 @@ public final class ActuallyResponder implements Responder {
     					break search;
         			}
         		}
-        		
         	}
         	else
         	{
@@ -77,7 +89,6 @@ public final class ActuallyResponder implements Responder {
         			boolean cont = false;
         			for( String key : keyword.getKeywords() )
     				{
-        				
     					Scanner scan = new Scanner(System.in);
     					if(keyword.getWordMatch().equals(Keyword.MatchType.CONTAINS) && word.equals("facebook"))
     					{
@@ -91,7 +102,6 @@ public final class ActuallyResponder implements Responder {
     						String FBOutput="";
     						FBOutput = FBName.replaceAll(" ", "");
     						
-    							//FBOutput += nameFB2;
     						if(FBOutput == "")
     						{
     							pickGenericResponse();
@@ -133,21 +143,20 @@ public final class ActuallyResponder implements Responder {
     						
     						break search;
     					}
-    					
-//    					else if (keyword.getWordMatch().equals(Keyword.MatchType.CONTAINS) && word.equals("information"))
-//    					{
-//    						respond = true;
-//    						String wikiInfo = "";
-//    						pickResponse(inputSentence, keyword.getResponses());
-//    						String wikiCategory = scan.nextLine();
-//    						
-//    						String wikiOutput = "";
-//    						wikiOutput = wikiCategory.replaceAll(" ", "+");
-//    						
-//    						wikiInfo = wiki.getWikiInfo(wikiOutput) + ". You're Welcome.";
-//    						
-//    						
-//    					}
+
+    					else if (keyword.getWordMatch().equals(Keyword.MatchType.CONTAINS) && word.equals("information"))
+    					{
+    						respond = true;
+    						String wikiInfo = "";
+    						print("What would you like information on?");
+    						String wikiQuery = scan.nextLine();
+    						String wikiQuery2 = "";
+    								
+    						wikiQuery2 = wikiQuery.replaceAll(" ", "+");
+    						
+    						wikiInfo = wiki.getWikiInfo(wikiQuery2);
+    						System.out.println(wikiInfo + "You're welcome");						
+    					}
 
         			
         			if (keyword.getSentenceMatch().equals( Keyword.MatchType.ENDS_WITH ))
@@ -184,7 +193,7 @@ public final class ActuallyResponder implements Responder {
         }
     	if( ! respond )
     	{
-        	//translate();
+//			translate();
     		pickGenericResponse();
     	}
     }
@@ -219,30 +228,35 @@ public final class ActuallyResponder implements Responder {
     	}
     	if( ! respond )
     	{
-        	//translate();
-    		pickGenericResponse();
+//    			translate();
+    			pickGenericResponse();
     	}    	
     }
     
-//    private void translate()
-//    {
-//    	ActuallyChat chatTrans = new ActuallyChat();
-//    	Translator translator = Translator.getInstance();
-//    	String toTranslate = translator.translate(chatTrans.getSentence(), Language.FRENCH, Language.ENGLISH);
-//    	System.out.println(toTranslate);
-//    }
-    
+/**
+ * 
+ * Uses google translate API to change users input in french to english
+ * 
+ */
+   private void translate()
+    {
+    	ActuallyChat chatTrans = new ActuallyChat();
+    	Translator translator = Translator.getInstance();
+    	String toTranslate = translator.translate(chatTrans.getSentence(), Language.FRENCH, Language.ENGLISH);
+    	System.out.println("Did you mean " + toTranslate + "?");
+    }
+   
 /**
  * This picks a generic response to output to user
  */
    private void pickGenericResponse()
     {
-    	print( randomFromArray(
+    	print(randomFromArray(
     			"Let's talk about me some more.",
     			"That doesn't interest me.",
     			"I don't really know about that.",
     			"Can we talk about something else?",
     			"I'd rather not talk about that."
-    		) );
+    		));
     }
 }
