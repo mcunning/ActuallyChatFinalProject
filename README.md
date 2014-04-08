@@ -90,6 +90,8 @@ The chatBot would then ask the user what they would like to know about.
 The user could then enter a basic query that the chatBot will look up on Wikipedia.
 The writeup from the Wikipedia page will then be outputted to the user. 
 
+Refer to WikiTest class in the main.test.resources package to see a working test with hardcoded information.
+
 
 Class Organization
 =========
@@ -164,6 +166,18 @@ main.resources
 
 config.chat
 * Holds all keywords and responses
+
+main.test.resources
+-------------------
+
+TestPOS.java
+* Tests the functionality of the POS Tagging
+
+WikiTest.java
+* Tests the functionality of the Wikipedia API with hardcoded information
+
+YahooTest.java
+* Tests the functionality of the Yahoo! Answers API with hardcoded information
 
 org.json
 --------
